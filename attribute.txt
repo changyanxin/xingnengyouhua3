@@ -1,0 +1,35 @@
+var data = [],
+    container = document.getElementById('example'),
+    hot = new Handsontable(container,{ 
+        data: data, 
+        minSpareRows: 20,//显示空白行数 
+        colHeaders: true,//是否显示表格头部字母表 
+        contextMenu: true,//右键显示更多功能 
+        rowHeaders: true,//是否显示列数字 
+        manualColumnResize: true,//自定义列高 
+        manualRowResize: true,//自定义行宽 
+        manualColumnMove: true,//是否能拖动列 
+        manualRowMove: true,//是否能拖动行 
+        columnSorting:true, //false/对象 //当值为true时，表示启用排序插件 // 
+        className: "htCenter", //表格文字对其方式 htCenter,htLeft, htCenter, htRight, htJustify, htTop, htMiddle, htBottom // 
+        currentRowClassName: 'currentRow',//定义th与td样式，更精准的锁定点击点 // 
+        currentColClassName: 'currentCol', // 
+        autoWrapRow: false, 
+        colWidths: 110,//列宽px,定义之后文字自动换行 
+        columns: [//每一个对象对应一列 
+            {   // data: '列号自定义名称',//列号自定义名称,使用colHeaders之后不起作用 // 
+                readOnly: true,//是否是可读 
+                type: 'numeric', 
+                format: '0,0.00',// 
+                format: '$0,0.00', 
+                language: 'en', 
+            }, 
+            { type: 'date', 
+                dateFormat: 'YYYY-MM-DD', 
+                correctFormat: true, 
+                defaultDate: '2008-05-01', 
+            },
+            {对应每个标题},
+            {}
+        ]
+    });
